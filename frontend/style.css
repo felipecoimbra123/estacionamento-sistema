@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: #9bd1e561;
+}
+
+.imagem-header img{
+    width: 200px;
+    display: flex;
+    display: inline-block;
+}
+
+
+
+.main-index div{
+    background-color: #9bd1e561;
+    display: flex;
+    justify-content: center;
+}
