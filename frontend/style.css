@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -6,12 +8,18 @@
 
 header{
     background-color: #9bd1e561;
+    display: flex;
+    align-items: center;
+}
+
+header h1{
+    font-family: "Abel", serif;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .imagem-header img{
     width: 200px;
-    display: flex;
-    display: inline-block;
 }
 
 
