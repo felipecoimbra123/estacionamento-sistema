@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
 
 *{
     margin: 0;
@@ -10,6 +11,8 @@ header{
     background-color: #9bd1e561;
     display: flex;
     align-items: center;
+    gap: 100px;
+    margin-bottom: 50px;
 }
 
 header h1{
@@ -22,10 +25,39 @@ header h1{
     width: 200px;
 }
 
-
-
-.main-index div{
-    background-color: #9bd1e561;
+.main-index .form-register{
+    background-color: #6A8EAE;
+    padding: 10px;
+    align-items: center;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    max-width: 400px;
+    gap: 20px;
+    border-radius: 12px;
+}
+
+.form-register h1{
+    font-family: "Abel", serif;
+    margin-bottom: 50px;
+    color: #FFFFFF;
+}
+
+.register-input{
+    display: flex;
+    flex-direction: column;
+}
+
+.register-input label{
+    font-size: 20px;
+}
+
+.register-input input{
+    border-radius: 15px;
+    border: 0px;
+    font-size: 16px;
+    width: 350px;
+    outline: none;
+    padding: 15px;
+    font-family: "Handjet", serif;
 }
