@@ -4,9 +4,9 @@ use cars;
 
 create table owner (
     id int primary key auto_increment,
-    name varchar(265),
-    email varchar(45),
-    password varchar(45)
+    name varchar(265) not null,
+    email varchar(45) not null,
+    password varchar(45) not null
 )
 
 create table parking_space (
@@ -15,7 +15,7 @@ create table parking_space (
 
 create table cars (
     id int primary key auto_increment,
-    vehicle_name varchar(265),
-    license_plate varchar(45) unique,
+    vehicle_name varchar(265) not null,
+    license_plate varchar(45) unique not null,
     foreign key (id_owner) references owner(id)
 )
