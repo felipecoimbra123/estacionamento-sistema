@@ -16,24 +16,29 @@
     </header>
 
     <main class="main-index">
-        <form class="form">
-            <h1>Cadastro Usuário</h1>
+        <form class="formCar">
+            <h1>Cadastro Veículos</h1>
             <div class="form-input">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" placeholder="Digite seu nome" required>
+                <label for="vehicle_name">Carro:</label>
+                <input type="text" id="vehicle_name" placeholder="Digite o nome do seu carro" required>
             </div>
             <div class="form-input">
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                <label for="license_plate">Placa:</label>
+                <input type="text" id="license_plate" placeholder="Digite a placa de seu veículo" required>
             </div>
             <div class="form-input">
-                <label for="password">Senha:</label>
-                <input type="password" id="password" placeholder="Digite sua senha" required>
+                <label for="parking_space">Vaga:</label>
+                <select name="parking_space" id="parking_space">
+                    <option value="101">101 - Especial</option>
+                    <option value="102">102</option>
+                    <option value="103">103 - Especial</option>
+                    <option value="104">104</option>
+                    <option value="105">105</option>
+                </select>
             </div>
             <div class="div-button-register">
                 <button class="button-form" type="submit">Cadastrar</button>
             </div>
-            <a href="login.html">Já possui uma conta?</a>
         </form>
     </main>
     <script src="script.js"></script>

@@ -63,12 +63,54 @@ header h1{
 
 .form-input input{
     border-radius: 15px;
-    border: 0px;
+    border: none;
     font-size: 18px;
     width: 350px;
     outline: none;
     padding: 15px;
     font-family: "Handjet", serif;
+}
+
+.form-input select{
+    width: 350px;
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+    outline: none;
+    font-family: "Handjet", serif;
+    font-size: 18px;
+}
+
+.formCar{
+    background-color: #6A8EAE;
+    padding: 20px;
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    gap: 20px;
+    border-radius: 12px;
+}
+
+.formCar h1{
+    color: white;
+}
+
+.formLogin {
+    background-color: #6A8EAE;
+    padding: 20px;
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    gap: 20px;
+    border-radius: 12px;
+}
+
+.formLogin h1 {
+    color: white;
 }
 
 .button-form{
@@ -83,3 +125,49 @@ header h1{
     text-transform: uppercase;
 }
 
+table{
+    background-color: #9bd1e5;
+    border-collapse: collapse;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: auto;
+}
+
+th, td{
+    border: 2px solid black;
+    padding: 50px;
+    width: 200px;
+    font-family: "Abel", serif;
+    color: black;
+    font-weight: 900;
+}
+
+th{
+    background-color: #f0f0f0;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Abel", serif;
+}
+
+.btn-delete-car{
+    padding: 3px;
+    margin: 10px;
+    width: 140px;
+    background-color: #D02F52;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.btn-edit-car{
+    padding: 3px;
+    margin: 10px;
+    width: 140px;
+    background-color: #57A773;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
