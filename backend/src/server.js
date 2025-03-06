@@ -42,10 +42,10 @@ app.post('/usuario/login', (req, res) => {
 })
 
 app.post('/carro/cadastro', (req, res) => {
-    const {vehicle_name, license_plate, parking_space} = req.body
+    const {vehicle_name, license_plate, parking_space, owner} = req.body
 
-    const query = 'INSERT INTO cars (vehicle_name, license_plate, parking_space) VALUES (?, ?, ?)'
-    connection.query(query, [vehicle_name, license_plate, parking_space], (err, results) => {
+    const query = 'INSERT INTO cars (vehicle_name, license_plate, parking_space, owner) VALUES (?, ?, ?, ?)'
+    connection.query(query, [vehicle_name, license_plate, parking_space, owner], (err, results) => {
         if(err) {
             return res.status(500).json({success: false, err, message: 'Erro no Servidor'})
         }
