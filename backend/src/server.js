@@ -34,7 +34,7 @@ app.post('/usuario/login', (req, res) => {
     }
 
     if (results.length > 0) {
-        res.json({ success: true, message: 'Sucesso no login!' })
+        res.json({ success: true, message: 'Sucesso no login!', data: results[0]})
     } else {
         res.json({ succes: false, message: 'Usuário ou senha incorretos!'})
     } 
@@ -67,6 +67,7 @@ app.get('/carros', (req, res) => {
 app.put('/carros/:id', (req, res) => {
     const { id } = req.params
     const { vehicle_name, license_plate } = req.body
+
     const query = 'UPDATE cars SET vehicle_name = ?, license_plate = ? WHERE id = ?'
     connection.query(query, [vehicle_name, license_plate, id], (err) => {
         if (err) {
