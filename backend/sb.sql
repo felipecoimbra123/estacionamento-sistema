@@ -12,6 +12,8 @@ create table parking_space (
     id varchar(45) primary key
 );
 
+drop table owner;
+
 drop table parking_space;
 
 drop table cars;
@@ -21,14 +23,14 @@ create table cars (
     vehicle_name varchar(265) not null,
     license_plate varchar(45) unique not null,
     parking_space varchar(45) unique not null,
-    owner int,
+    owner int not null,
     foreign key (owner) references owner(id),
     foreign key (parking_space) references parking_space(id)
 );
 
 insert into parking_space (id) values (101), (102), (103), (104), (105);
 insert into owner (name, email, password) values ('joao', 'joao@g', '123');
-insert into cars (vehicle_name, license_plate, parking_space) values ('joao', 'joao@g', '102');
+insert into cars (vehicle_name, license_plate, parking_space, owner) values ('Civic', 'ABC', '102', '1');
 
 select * from parking_space;
 
