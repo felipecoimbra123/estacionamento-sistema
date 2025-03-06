@@ -171,3 +171,24 @@ th{
     border-radius: 5px;
     font-size: 20px;
 }
+
+.link-car-register{
+    border: 1px solid black;
+    background-color: #9bd1e5;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: "Abel", serif;
+    font-size: 25px;
+}
+
+.main-listagem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
