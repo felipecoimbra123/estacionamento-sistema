@@ -7,6 +7,9 @@
 * [RF: 006] - Header com imagens.
 
 # Requisitos Não Funcionais
+* [RNF: 001] - Interface simples;
+* [RNF: 002] - Pouco requisito de processamento;
+* [RNF: 003] - Carregamento da página rápido.
 
 # Dificuldades Encontradas
 * Guardar informações no LocalStorage;
