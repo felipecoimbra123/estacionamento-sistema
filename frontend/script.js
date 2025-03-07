@@ -17,6 +17,7 @@ form?.addEventListener('submit', async (e) => {
 
   if (result.success) {
     alert("Cadastro bem-sucedido!");
+    localStorage.setItem('owner', JSON.stringify({id: result.results.insertId}))
     window.location.href = 'car-register.html'
   } else {
     alert("Cadastro não concluído!");
@@ -55,11 +56,13 @@ formCar?.addEventListener('submit', async (e) => {
   const vehicle_name = document.getElementById('vehicle_name').value;
   const license_plate = document.getElementById('license_plate').value;
   const parking_space = document.getElementById('parking_space').value;
+  const owner = JSON.parse(localStorage.getItem('owner')).id;
+
 
   const response = await fetch('http://localhost:3000/carro/cadastro', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ vehicle_name, license_plate, parking_space })
+    body: JSON.stringify({ vehicle_name, license_plate, parking_space, owner})
   });
 
   const result = await response.json();
@@ -68,7 +71,7 @@ formCar?.addEventListener('submit', async (e) => {
     alert("Cadastro do veículo bem-sucedido!");
     window.location.href = 'listagem.html'
   } else {
-    alert("A vaga já está preenchida!");
+    alert("Erro ao cadastrar veículo!");
     console.log(result)
   }
 });
@@ -78,22 +81,25 @@ async function loadCars() {
   const data = await response.json()
   const tbody = document.querySelector('tbody')
 
-  tbody.innerHTML = ''
+  if (tbody.innerHTML ?? false) {
+    tbody.innerHTML = ''
+  }
+
 
   data.cars.forEach(car => {
+    console.log(car, localStorage.getItem("owner"))
     const row = document.createElement('tr')
     row.innerHTML = `
       <td>${car.vehicle_name}</td>
       <td>${car.license_plate}</td>
       <td>${car.parking_space}</td>
       <td>
-      ${car.owner === JSON.parse(localStorage.getItem('owner')).id?`
+      ${car.owner === JSON.parse(localStorage.getItem('owner'))?.id ?`
         <button class='btn-delete-car' onclick='deleteCar(${car.id})'>Excluir Veículo</button>
-        <button class='btn-edit-car' onclick='editCar(${car.id})'>Editar Veículo</button>
-      </td>`: ""
-      }`
-
-    console.log(data)
+        <button class='btn-edit-car' onclick='editCar(${car.id})'>Editar Veículo</button>`: "Nenhuma Ação Disponível"
+      }
+      </td>`
+      
     tbody.appendChild(row)
   });
 }
